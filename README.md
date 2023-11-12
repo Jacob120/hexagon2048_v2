@@ -1,49 +1,29 @@
 # Hexagonal 2048
 
-Link to the deployed version [https://hexagon2048-evolution.surge.sh/](https://hexagon2048-evolution.surge.sh/)
+Link to the deployed version [https://jk-hexagon2048.netlify.app//](https://jk-hexagon2048.netlify.app/)
 
-## Task description
+![](https://github.com/Jacob120/hexagon_game_v2/tree/main/public/images/hexagon-cropped-gif.gif)
 
-Your task is to develop a game [2048](https://play2048.co/) on a hexagonal field.
-Please take a look at our example: [hexagonal 2048](https://hex2048.surge.sh/).
+## Description
+
+Goal was to develop a game [2048](https://play2048.co/) on a hexagonal field.
 
 What is required:
 
 - Have to render a hexagonal game field with hexagons according to the game size.
-- Required game size is 2. The supporting of other game levels (3, 4, and more) is highly appreciated but NOT REQUIRED.
+- Required game size is 2.
 - Have to receive data from the [server](#receiving-data-from-the-deployed-server) and render them correctly.
 - Have to handle appropriate keyboard keys according to the [rules](#directions-and-keys).
 - Have to change field data by clicking keyboard keys according to the [rules](#shifting-rules).
-- Deploy your implementation on the [surge.sh](http://surge.sh).
-- Have to work on the latest Google Chrome on the desktop (all other devices and browsers are up to you).
-- Have to setup game via [urlSearchParams](#search-params).
-- All other ideas, game features and controls, supported devices, and so on are optional.
-
-Nice to have:
-
-- Several game levels (at least 3 and 4) ([example](https://hex2048.surge.sh/?hostname=hex2048szb9jquj-hex15.functions.fnc.fr-par.scw.cloud&port=80&radius=4)).
+- Deploy your implementation.
+- Have to work on the latest Google Chrome on the desktop.
 
 More info:
 
 - **Useful article about hexagons:
   [Hexagonal Grids](https://www.redblobgames.com/grids/hexagons/).**
-- The visual game appearance and technologies to implement the task are up to you and are restricted only to your imagination.
-- Animations are appreciated but not required.
 
 ## Rules
-
-### Game initialization
-
-When the game starts on any game level, the user should not interact with UI.
-That means when you choose the game level or the game is loaded, the game should be initialized on its own by default,
-and the user has to see the beginning numbers to start playing.
-
-The same rule is applicable when the game is loaded by the URL for [tests purposes](#how-will-your-solution-be-tested).
-When the game is loaded using URL parameters, then the first request has to be done immediately after loading without any additional actions.
-And as a result, you will be able to see the beginning numbers to start playing.
-
-In other words, before starting playing the user should already see some beginning numbers received from the server without any actions.
-The first request to the server has to be done automatically after starting the game.
 
 ### Directions and Keys
 
@@ -214,8 +194,6 @@ The game should have the ability to be set up via searchParams. Required params 
 - `port` - optional parameter. If it is not set to default port is 80 otherwise your game should use this port for rng-server.
 - `radius` - radius for the game.
 
-You don't need to implement [wizard form](https://hex2048.surge.sh/) but it can help you during developing the game.
-
 Tests are using these parameters to set up your game for test running.
 
 ## How will your solution be tested?
@@ -239,10 +217,6 @@ has to be a single one and has to have appropriate `data-value`. That means you
 should not have more than one element in the DOM with the same values of `data-x`,
 `data-y`, `data-z`. Otherwise, tests cannot handle this properly.
 
-### Data attribute to recognize the game status
-
-Do not forget to add `data-status` attribute. [Read more](#game-status)
-
 ### Run tests locally
 
 To run tests locally you should run tests. Steps to help:
@@ -265,24 +239,6 @@ Please run tests for your deployed game and check that all work properly.
 npm run test:local -- --url=http://hex2048.surge.sh
 ```
 
-## Grading Notes
-
-For extra credits, you should the following (one or more):
-
-- Support radiuses more than 2 (at least 3, 4, and even more)
-- Cover your code base with unit tests (with common sense of course)
-- Implement animations
-
-## Implementation details
-
-You can use TypeScript or JavaScript this decision is up to you.
-If you want to use JavaScript, you should use `.jsx` extension, and `.tsx` extension for TypeScript.
-
-If you don't like React, you can remove `ReactDOM.render` from `src/index.tsx` and implement your game with plain JavaScript/TypeScript.
-
-We use `Create-React-App` template which brings a number of limitations in the choice of other technologies,
-but if you want and are able to use another library, we won't mind.
-
 ## Package scripts description
 
 - `npm run start` - starts dev server with your game. The page will be reloaded on each code update.
@@ -297,26 +253,9 @@ but if you want and are able to use another library, we won't mind.
 The [tests/\*](tests/) files should not be modified.
 If you would like to add your own unit tests, you can add these in a separate file in the `src` folder.
 
-The `package.json` file should only be modified in order to add any third-party dependencies required for your solution.
-The jest and babel versions should not be changed.
-
-Your solution must use/be compatible with Node.js version **15.5.1**.
-
 ## Tests
 
 _Note: The tests were written using [puppeteer](https://github.com/puppeteer/puppeteer) library. (We haven't used cypress in tests)_
 
 Run `npm install` to install all dependencies and then run `npm run test` to run tests.
 These should all pass if your solution has been implemented correctly.
-
-Good luck!
-
-## License
-
-At CodeScreen, we strongly value the integrity and privacy of our assessments. As a result, this repository is under exclusive copyright, which means you **do not** have permission to share your solution to this test publicly (i.e., inside a public GitHub/GitLab repo, on Reddit, etc.). <br>
-
-## Submitting your solution
-
-Please push your changes to the `main branch` of this repository. You can push one or more commits. <br>
-
-Once you are finished with the task, please click the `Submit Solution` link on <a href="https://app.codescreen.com/candidate/6396faef15fb2c7ed9d3feae" target="_blank">this screen</a>.
