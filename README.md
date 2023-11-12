@@ -3,6 +3,7 @@
 Link to the deployed version [https://jk-hexagon2048.netlify.app//](https://jk-hexagon2048.netlify.app/)
 
 ![](https://github.com/Jacob120/hexagon_game_v2/tree/main/public/images/hexagon-cropped-gif.gif)
+![gif](https://github.com/Jacob120/hexagon_game_v2/blob/main/public/images/heaxgon-cropped-gif.gif)
 
 ## Description
 
